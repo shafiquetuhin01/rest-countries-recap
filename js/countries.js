@@ -10,12 +10,14 @@ const displayCountries = countries => {
     const container = document.getElementById('countries');
     container.innerHTML = countriesHTML.join(' ');
 };
-const getCountryHTML = country => {
+const getCountryHTML = everyCountry => {
     return `
         <div class="country">
-            <h2>${country.name.common}</h2>
-            <img src="${country.flags.png}">
+            <h2>${everyCountry.name.common}</h2>
+            <h3>Capital: ${everyCountry.capital}</h3>
+            <img src="${everyCountry.flags.png}">
+            <h3>Population: ${everyCountry.population}</h3>
         </div>
-    `
-}
+    `;
+};
 loadCountries();
